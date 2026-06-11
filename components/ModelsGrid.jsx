@@ -1,13 +1,17 @@
-import React from "react";
+"use client";
+
 import { motion } from "framer-motion";
 import ModelCard from "./ModelCard";
+import ScrollReveal from "./ui/ScrollReveal";
+import NeonLights from "./effects/NeonLights";
+import FloatingParticles from "./effects/FloatingParticles";
 
 const modelsData = [
   {
     id: "sm-1",
     badge: {
       text: "URBANA",
-      style: "bg-surface-container-high text-primary-fixed",
+      style: "bg-surface-container-high text-blue-600",
     },
     imageSrc:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuA02-LT4T_Zex1bYYZcE4M0bY2coDULfARsf7B-HGMrkZJK14H53zw4N4OCxBE9YFXKsEkE4vLMsdYrZ8NZ5kZCF2b2vEK5txY3czdf4WRPEtMqvFH14GckJqB_BTSG8VEAOvT8Jte3sKCXJ0Fj8OMyIJNCw5PbB7RRrGN_TXoV6J_9zL9fhSG2SLzoHRxC4HrXlvqEm4aadHN6z_7-7ymVuFnMrnRSaWEe4g7PjrR0j3KXvxQQM3zyZbHyyqUCwGfANOBKux8j1e3J",
@@ -19,13 +23,13 @@ const modelsData = [
     topSpeed: "25 km/h",
     ctaText: "Compre Agora",
     ctaStyle:
-      "border border-primary-fixed text-primary-fixed hover:bg-primary-fixed hover:text-on-primary-container",
+      "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white",
   },
   {
     id: "sm-pro",
     badge: {
       text: "PRO",
-      style: "bg-primary-container text-on-primary-container",
+      style: "bg-blue-600 text-white",
     },
     imageSrc:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCnEXiUMx9WZmcn95P0c4ma0Oc2NkDgnOsQV0J8MFaciYpqwq_30NNZ63GdJ8UXEH6uWwbZNXO7M9yTQaRgDQLZCW5Qfw85zcU6tQXcTrMyoqCwIB9mVuWnuGJyoCk6GK_BqKczyxJkfZSXVhxLq8jm_uXutZ0NNgrTa-AWXgtuWu3A-T7Jap3ZkhZpyJBTwcliz97qWRu1gzHFLqmEzuYvBWMjgGpSuII7YZFoSLmKeKaJIaXIcohLQ1Swiv-kUgwgaijt39DxfqRR",
@@ -38,9 +42,9 @@ const modelsData = [
     topSpeed: "45 km/h",
     ctaText: "Compre Agora",
     ctaStyle:
-      "bg-primary-container text-on-primary-container hover:glow-primary",
+      "bg-gradient-to-b from-sky-400 to-blue-700 text-white hover:brightness-110",
     cardHighlight:
-      "border-primary-fixed/30 shadow-[0_0_15px_rgba(160,251,0,0.05)]",
+      "border-blue-600/30 shadow-[0_0_15px_rgba(37,99,235,0.1)]",
   },
   {
     id: "sm-eco",
@@ -59,7 +63,7 @@ const modelsData = [
     topSpeed: "30 km/h",
     ctaText: "Compre Agora",
     ctaStyle:
-      "border border-primary-fixed text-primary-fixed hover:bg-primary-fixed hover:text-on-primary-container",
+      "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white",
   },
 ];
 
@@ -86,19 +90,26 @@ const ModelsGrid = () => {
   return (
     <section
       id="models"
-      className="py-margin-desktop px-gutter md:px-margin-desktop max-w-container-max mx-auto relative z-10"
+      className="relative py-24 md:py-28 overflow-hidden"
     >
-      <div className="mb-margin-desktop flex flex-col md:flex-row justify-between items-end gap-gutter border-b border-white/10 pb-gutter">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <NeonLights />
+        <FloatingParticles />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
+      </div>
+
+      <div className="relative z-10 px-gutter md:px-margin-desktop max-w-container-max mx-auto">
+      <ScrollReveal className="mb-margin-desktop flex flex-col md:flex-row justify-between items-end gap-gutter border-b border-white/10 pb-gutter">
         <div>
-          <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
-            ESCOLHA SUA ARMA
+          <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-wide">
+            Entrega Piraju–SP e região
           </h2>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-2">
+          <p className="font-body-md text-body-md text-on-surface-variant mt-3">
             Chega de desculpas. Escolha a máquina que vai atropelar o trânsito
             da sua rotina.
           </p>
         </div>
-      </div>
+      </ScrollReveal>
 
       <motion.div
         variants={containerVariants}
@@ -113,6 +124,7 @@ const ModelsGrid = () => {
           </motion.div>
         ))}
       </motion.div>
+      </div>
     </section>
   );
 };

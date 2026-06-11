@@ -1,11 +1,9 @@
-# .gitignore
 # Node.js dependencies
 node_modules/
 
 # Build output directories
-/dist/
-/.vite/
-/.vite_cache/
+/.next/
+/out/
 
 # Environment variable files
 .env
