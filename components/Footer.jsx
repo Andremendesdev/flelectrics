@@ -16,7 +16,7 @@ const MAP_LINK = "https://maps.google.com/?q=Piraju,+SP,+Brasil";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-margin-desktop overflow-hidden border-t border-white/10">
+    <footer id="contato" className="relative mt-margin-desktop overflow-hidden border-t border-white/10">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <NeonLights />
         <FloatingParticles count={12} opacityScale={0.4} />

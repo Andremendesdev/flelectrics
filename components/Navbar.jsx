@@ -19,7 +19,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [{ name: "Modelos", href: "#models" }];
+  const navLinks = [
+    { name: "Início", href: "#inicio" },
+    { name: "Números", href: "#stats" },
+    { name: "Modelos", href: "#models" },
+    { name: "Benefícios", href: "#benefits" },
+    { name: "Contato", href: "#contato" },
+  ];
 
   return (
     <>
@@ -35,9 +41,9 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center px-gutter md:px-margin-desktop w-full max-w-container-max mx-auto">
           <a
-            href="#"
+            href="#inicio"
             className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            aria-label="FL Electrics Home"
+            aria-label="FL Electrics — início"
           >
             <Logo />
           </a>

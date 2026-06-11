@@ -12,7 +12,10 @@ const Hero = () => {
   const { heroReady } = useLoading();
 
   return (
-    <section className="relative min-h-[85svh] md:min-h-[921px] flex items-center pt-28 pb-16 md:pt-margin-desktop md:pb-margin-desktop px-gutter md:px-margin-desktop overflow-hidden -mt-20">
+    <section
+      id="inicio"
+      className="relative min-h-[85svh] md:min-h-[921px] flex items-center pt-28 pb-16 md:pt-margin-desktop md:pb-margin-desktop px-gutter md:px-margin-desktop overflow-hidden -mt-20"
+    >
       <div className="absolute inset-0 z-0 bg-surface-container-lowest">
         <motion.img
           initial={{ scale: 1.1, opacity: 0 }}

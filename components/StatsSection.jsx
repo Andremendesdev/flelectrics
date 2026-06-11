@@ -14,7 +14,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="relative py-14 sm:py-20 md:py-28 overflow-hidden">
+    <section id="stats" className="relative py-14 sm:py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <NeonLights />
         <FloatingParticles />
