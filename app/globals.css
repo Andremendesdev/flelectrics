@@ -60,11 +60,41 @@
       0 0 64px rgba(29, 78, 216, 0.3);
   }
 
-  .btn-border-trail {
+  .btn-border-trail,
+  .btn-border-trail-light {
     position: relative;
     display: inline-flex;
     border-radius: 9999px;
     isolation: isolate;
+  }
+
+  .btn-border-trail-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+      from var(--trail-angle),
+      rgba(103, 232, 249, 0.4) 0deg,
+      rgba(186, 230, 253, 0.45) 235deg,
+      rgba(34, 211, 238, 0.55) 268deg,
+      rgba(165, 243, 252, 0.75) 285deg,
+      rgba(207, 250, 254, 0.9) 310deg,
+      rgba(34, 211, 238, 0.5) 325deg,
+      rgba(103, 232, 249, 0.42) 350deg,
+      rgba(103, 232, 249, 0.4) 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-trail-spin 3.5s linear infinite;
+    pointer-events: none;
   }
 
   .btn-border-trail::before {
@@ -241,6 +271,11 @@
   .btn-border-trail::before {
     animation: none;
     background: rgba(37, 99, 235, 0.5);
+  }
+
+  .btn-border-trail-light::before {
+    animation: none;
+    background: rgba(103, 232, 249, 0.6);
   }
 
   .neon-orb,
