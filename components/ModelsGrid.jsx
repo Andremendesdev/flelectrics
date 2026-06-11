@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import ModelCard from "./ModelCard";
 import ScrollReveal from "./ui/ScrollReveal";
+import ScrollUnderline from "./ui/ScrollUnderline";
 import NeonLights from "./effects/NeonLights";
 import FloatingParticles from "./effects/FloatingParticles";
 
@@ -101,9 +102,11 @@ const ModelsGrid = () => {
       <div className="relative z-10 px-gutter md:px-margin-desktop max-w-container-max mx-auto">
       <ScrollReveal className="mb-margin-desktop flex flex-col md:flex-row justify-between items-end gap-gutter border-b border-white/10 pb-gutter">
         <div>
-          <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-wide">
+          <ScrollUnderline
+            textClassName="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-wide"
+          >
             Entrega Piraju–SP e região
-          </h2>
+          </ScrollUnderline>
           <p className="font-body-md text-body-md text-on-surface-variant mt-3">
             Chega de desculpas. Escolha a máquina que vai atropelar o trânsito
             da sua rotina.

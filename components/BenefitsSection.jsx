@@ -9,6 +9,7 @@ import {
   Wrench,
 } from "lucide-react";
 import ScrollReveal from "./ui/ScrollReveal";
+import ScrollUnderline from "./ui/ScrollUnderline";
 import NeonLights from "./effects/NeonLights";
 import FloatingParticles from "./effects/FloatingParticles";
 import { cn } from "@/lib/utils";
@@ -94,13 +95,12 @@ const BenefitsSection = () => {
       <div className="relative z-10 max-w-container-max mx-auto px-4 sm:px-gutter md:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 sm:mb-14">
           <ScrollReveal className="lg:col-span-5 lg:sticky lg:top-28">
-            <p className="text-[9px] sm:text-[10px] font-medium tracking-[0.22em] uppercase text-sky-400 mb-3">
-              Benefits
-            </p>
-            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[1.75rem] sm:text-headline-lg-mobile md:text-headline-lg text-on-surface leading-[1.15]">
+            <ScrollUnderline
+              textClassName="font-headline-lg-mobile md:font-headline-lg text-[1.75rem] sm:text-headline-lg-mobile md:text-headline-lg leading-[1.15]"
+            >
               Por que escolher{" "}
               <span className="text-neon-sky-soft">nossas scooters?</span>
-            </h2>
+            </ScrollUnderline>
             <p className="mt-4 text-sm sm:text-base text-on-surface-variant leading-relaxed max-w-md">
               Tecnologia elétrica com custo real no bolso, autonomia de verdade
               e suporte de quem está na sua região.
@@ -159,16 +159,17 @@ const BenefitsSection = () => {
                       )}
                     </div>
 
-                    <h3
-                      className={cn(
-                        "font-headline-md text-on-surface leading-snug",
+                    <ScrollUnderline
+                      textClassName={cn(
+                        "font-headline-md leading-snug",
                         benefit.featured
                           ? "text-lg sm:text-xl md:text-2xl"
                           : "text-base sm:text-lg"
                       )}
                     >
                       {benefit.title}
-                    </h3>
+                    </ScrollUnderline>
+
                     <p
                       className={cn(
                         "mt-2 text-on-surface-variant leading-relaxed flex-grow",
@@ -182,7 +183,10 @@ const BenefitsSection = () => {
 
                     {benefit.featured && (
                       <p className="mt-4 sm:mt-6 text-3xl sm:text-4xl md:text-5xl font-black text-neon-sky-soft tabular-nums">
-                        75<span className="text-lg sm:text-xl md:text-2xl font-bold text-sky-400 ml-1">km</span>
+                        75
+                        <span className="text-lg sm:text-xl md:text-2xl font-bold text-sky-400 ml-1">
+                          km
+                        </span>
                       </p>
                     )}
                   </div>

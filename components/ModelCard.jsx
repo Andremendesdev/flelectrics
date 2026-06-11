@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { Battery, Gauge } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ScrollUnderline from "./ui/ScrollUnderline";
 
 const WHATSAPP_URL = "https://wa.me/1234567890";
 
@@ -82,9 +83,9 @@ const ModelCard = ({
         </div>
 
         <div className="flex-grow">
-          <h3 className="font-headline-md text-headline-md text-on-surface">
+          <ScrollUnderline textClassName="font-headline-md text-headline-md">
             {name}
-          </h3>
+          </ScrollUnderline>
           <p className="font-body-md text-body-md text-on-surface-variant mt-2">
             {description}
           </p>
