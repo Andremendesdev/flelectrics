@@ -9,7 +9,7 @@ import { useLoading } from "./LoadingProvider";
 
 const WHATSAPP_URL = "https://wa.me/1234567890";
 
-const SCROLL_RUNWAY_VH = 230;
+const SCROLL_RUNWAY_VH = 200;
 
 const Hero = () => {
   const { heroReady } = useLoading();
@@ -20,7 +20,7 @@ const Hero = () => {
     offset: ["start start", "end end"],
   });
 
-  const scooterX = useTransform(scrollYProgress, [0, 1], ["0vw", "-62vw"]);
+  const scooterX = useTransform(scrollYProgress, [0, 1], ["0vw", "-48vw"]);
   const scooterOpacity = useTransform(scrollYProgress, [0, 0.85, 1], [1, 1, 0]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.55, 0.9], [1, 0.85, 0.4]);
   const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.15, 0.45], [1, 0.6, 0]);
